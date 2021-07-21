@@ -1,5 +1,6 @@
 import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
+import PropTypes from "prop-types";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -12,7 +13,7 @@ import { createStructuredSelector } from "reselect";
 import { getListUser } from "../../redux/actions/user";
 import {
   makeSelectStatusFlags,
-  makeSelectUsers,
+  makeSelectUsers
 } from "../../redux/selectors/user";
 import Scrollable from "../Scrollable";
 import Spinner from "../Spinner";
@@ -31,7 +32,7 @@ function Users(props) {
         <Scrollable>
           {statusFlags.isLoading === true && <Spinner />}
           <List>
-            {listUser.map((item) => (
+            {listUser.map(item => (
               <ListItem alignItems="flex-start" key={item.id} divider>
                 <ListItemAvatar>
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -60,14 +61,20 @@ function Users(props) {
   );
 }
 
+Users.propTypes = {
+  triggerGetListUser: PropTypes.func,
+  listUser: PropTypes.array,
+  statusFlags: PropTypes.object
+};
+
 const mapStateToProps = createStructuredSelector({
   listUser: makeSelectUsers(),
-  statusFlags: makeSelectStatusFlags(),
+  statusFlags: makeSelectStatusFlags()
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    triggerGetListUser: () => dispatch(getListUser()),
+    triggerGetListUser: () => dispatch(getListUser())
   };
 }
 

@@ -1,0 +1,65 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "react-app",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "prettier", "react-hooks"],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "arrowParens": "avoid",
+        "semi": true,
+        "trailingComma": "none",
+        "endOfLine": "lf",
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": false,
+        "printWidth": 80,
+        "jsxSingleQuote": false
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": 0,
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "no-trailing-spaces": 1,
+    "no-multi-spaces": 1,
+    "no-multiple-empty-lines": 1,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
+    "max-len": 0,
+    "newline-per-chained-call": 0,
+    "no-confusing-arrow": 0,
+    "no-use-before-define": 0,
+    "prefer-template": 2,
+    "react/destructuring-assignment": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/jsx-uses-vars": 2,
+    "react/require-default-props": 0,
+    "react/require-extension": 0,
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/sort-comp": 0,
+    "require-yield": 0
+  }
+}
